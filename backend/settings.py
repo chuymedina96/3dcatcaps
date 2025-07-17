@@ -46,8 +46,6 @@ CORS_ALLOWED_ORIGINS = [
     "https://www.3dcatcaps.com",
     "https://3dcatcaps.com",
     "http://localhost:3000",
-    "www.3dcatcaps.com",
-    "3dcatcaps.com"
 ]
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
