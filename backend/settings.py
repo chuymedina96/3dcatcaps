@@ -39,13 +39,15 @@ DEBUG = True
 
 ALLOWED_HOSTS = [".herokuapp.com", "3dcatcaps.com","localhost", "127.0.0.1", "www.3dcatcaps.com", "www.3dcatcaps.com"]
 
+CORS_ALLOW_CREDENTIALS = True
 
-CORS_ORIGIN_ALLOW_ALL = True  # for local testing
 
 CORS_ALLOWED_ORIGINS = [
     "https://www.3dcatcaps.com",
     "https://3dcatcaps.com",
-    "http://localhost:3000"
+    "http://localhost:3000",
+    "www.3dcatcaps.com",
+    "3dcatcaps.com"
 ]
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
@@ -67,6 +69,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -74,7 +77,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
     
 ]
 
