@@ -138,16 +138,16 @@ def create_checkout_session(request):
             line_items = []
 
             for item in cart:
-                if "catName" not in item or "teamLogo" not in item:
+                if "cat_name" not in item or "team" not in item:
                     return JsonResponse({"error": "Missing cart item info"}, status=400)
 
                 base_price = 2499
-                if item.get("bustType") in ["pope", "bubu"]:
+                if item.get("bust_type") in ["pope", "bubu"]:
                     base_price += 499
 
-                name = f"{item['catName'].strip()} Cap - {item['teamLogo'].capitalize()}"
-                if item["bustType"] != "none":
-                    name += f" + {item['bustType'].capitalize()}"
+                name = f"{item['cat_name'].strip()} Cap - {item['team'].capitalize()}"
+                if item["bust_type"] != "none":
+                    name += f" + {item['bust_type'].capitalize()}"
 
                 line_items.append({
                     "price_data": {
@@ -183,3 +183,4 @@ def create_checkout_session(request):
             return JsonResponse({"error": str(e)}, status=400)
 
     return JsonResponse({'error': 'Invalid request method'}, status=405)
+
