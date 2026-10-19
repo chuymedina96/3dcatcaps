@@ -37,7 +37,7 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [".herokuapp.com", "3dcatcaps.com","localhost", "127.0.0.1", "www.3dcatcaps.com", "www.3dcatcaps.com"]
+ALLOWED_HOSTS = [".herokuapp.com", ".onrender.com", "3dcatcaps.com","localhost", "127.0.0.1", "www.3dcatcaps.com", "www.3dcatcaps.com"]
 
 CORS_ALLOW_CREDENTIALS = True
 
